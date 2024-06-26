@@ -7,6 +7,7 @@ namespace Templates\Phoundation\AdminLte\Html\Pages;
 use Phoundation\Core\Core;
 use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\UrlBuilder;
 use Phoundation\Web\Requests\Response;
@@ -38,7 +39,9 @@ class TemplateSignInPage extends TemplateRenderer
                                     </div>
                                     <div class="card-body">
                                       <p class="login-box-msg">' . tr('Please sign in to start your session') . '</p>
-                                      <form action="' . UrlBuilder::getWww() . '" method="post">';
+                                      <form action="' . UrlBuilder::getWww() . '" method="post">
+                                            ' . Csrf::getHiddenElement();
+
                                             if (Session::supports('email')) {
                                                 $this->render .= '  <div class="input-group mb-3">
                                                                         <input type="email" name="email" id="email" class="form-control" placeholder="' . tr('Email address') . '"' . (isset_get($get['email']) ? 'value="' . $get['email'] . '"' : '') . '>

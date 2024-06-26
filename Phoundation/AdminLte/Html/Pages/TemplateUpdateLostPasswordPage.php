@@ -6,6 +6,7 @@ namespace Templates\Phoundation\AdminLte\Html\Pages;
 
 use Phoundation\Core\Core;
 use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\UrlBuilder;
 use Phoundation\Web\Requests\Response;
@@ -38,6 +39,7 @@ class TemplateUpdateLostPasswordPage extends TemplateRenderer
                                             <p class="login-box-msg">' . tr('Please enter a new password for your account to continue...') . '</p>
 
                                             <form action="' . UrlBuilder::getWww() . '" method="post">
+                                                ' . Csrf::getHiddenElement() . '
                                                 <div class="input-group mb-3">
                                                     <input type="password" name="password" id="password" class="form-control" placeholder="' . tr('Password') . '">
                                                     <div class="input-group-append">

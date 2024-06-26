@@ -10,6 +10,7 @@ use Phoundation\Web\Html\Components\Icons\SignOut;
 use Phoundation\Web\Html\Components\Input\Interfaces\RenderInterface;
 use Phoundation\Web\Html\Components\Logo;
 use Phoundation\Web\Html\Components\Widgets\Panels\TopPanel;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Templates\Phoundation\Mdb\Exception\MdbException;
@@ -263,6 +264,7 @@ class TemplateTopPanel extends TemplateRenderer
                     $delete[] = $element_id;
 
                     $contents .= '<form class="d-flex input-group w-auto">
+                                    ' . Csrf::getHiddenElement() . '
                                     <input type="search" class="form-control rounded" placeholder="' . tr('Search') . '" aria-label="' . tr('Search') . '" aria-describedby="search-addon" />
                                       <span class="input-group-text border-0" id="search-addon">
                                         <i class="fas fa-search"></i>

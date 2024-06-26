@@ -31,7 +31,7 @@ use Phoundation\Web\Requests\Response;
 class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 {
     /**
-     * Execute, builds and returns the page output, according to the template.
+     * ExecuteExecuteInterface, builds and returns the page output, according to the template.
      *
      * Either use the default execution steps from parent::execute($target), or write your own execution steps here.
      * Once the output has been generated, it should be returned.

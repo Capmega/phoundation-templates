@@ -18,6 +18,7 @@ namespace Templates\Phoundation\Mdb\Html\Pages;
 use Phoundation\Core\Core;
 use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\UrlBuilder;
 use Phoundation\Web\Requests\Response;
@@ -60,6 +61,7 @@ class TemplateSignInPage extends TemplateRenderer
 
         // Render the signin page section
         $signin   = '   <form method="post" action="' . UrlBuilder::getWww() . '">
+                          ' . Csrf::getHiddenElement() . '
                           <div class="sign-in text-center h1">
                               ' . Config::getString('project.owner.label', '<span>Phoun</span>dation') . '
                           </div>
@@ -119,11 +121,13 @@ class TemplateSignInPage extends TemplateRenderer
                           </div>';
         }
 
-        $signin .= '    </form>';
+        $signin .= Csrf::getHiddenElement() .
+                   '    </form>';
 
         if (Session::supports('signup')) {
             // Render the signup page section
             $signup = '     <form method="post" action="' . UrlBuilder::getWww() . '">
+                              ' . Csrf::getHiddenElement() . '
                               <div class="form-outline mb-4" data-mdb-input-init>
                                 <input type="text" id="registerName" class="form-control" />
                                 <label class="form-label" for="registerName">' . tr('Name') . '</label>
@@ -173,7 +177,8 @@ class TemplateSignInPage extends TemplateRenderer
                               </div>';
             }
 
-            $signup .= '    </form>';
+            $signup .= Csrf::getHiddenElement() .
+                       '    </form>';
         }
 
         // Render the entire page

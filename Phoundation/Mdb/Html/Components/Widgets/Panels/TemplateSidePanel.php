@@ -54,7 +54,7 @@ class TemplateSidePanel extends TemplateRenderer
                                         ->setAlt(tr('Profile picture for :user', [':user' => Session::getUser()->getDisplayName()]))
                                         ->setWidth(32)
                                         ->setHeight(32)
-                                        ->render() . tr('Dr. Test') . '
+                                        ->render() . Session::getUser()->getDisplayName() . '
                               </a>
                               ' . $this->component->getMenu()?->render() . '
                             </nav>';

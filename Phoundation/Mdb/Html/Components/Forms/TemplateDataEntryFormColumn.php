@@ -107,12 +107,23 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
 
         switch ($definition->getElement()) {
             case 'select':
-                $this->render .= '<div class="' . ($group ? 'input-group ' : null) . TemplatePage::getBottomMarginString() . Html::safe($definition->getSize() ? 'col-sm-' . $definition->getSize() : 'col') . ($definition->getVisible() ? '' : ' invisible') . ($definition->getDisplay() ? '' : ' d-none') . '">
+                if ($group) {
+                    $this->render .= '<div class="' . TemplatePage::getBottomMarginString() . Html::safe($definition->getSize() ? 'col-sm-' . $definition->getSize() : 'col') . ($definition->getVisible() ? '' : ' invisible') . ($definition->getDisplay() ? '' : ' d-none') . '">
+                                          <div class="input-group">
+                                          ' . $render . $scripts .
+                        ($definition->getLabel() ? ' <label class="form-label select-label" for="' . Html::safe($definition->getColumn()) . '">
+                                                   ' . Html::safe($definition->getLabel()) . '
+                                                 </label>' : '') . '
+                                      </div>
+                                  </div>';
+                } else {
+                    $this->render .= '<div class="' . TemplatePage::getBottomMarginString() . Html::safe($definition->getSize() ? 'col-sm-' . $definition->getSize() : 'col') . ($definition->getVisible() ? '' : ' invisible') . ($definition->getDisplay() ? '' : ' d-none') . '">
                                      ' . $render . $scripts .
-                    ($definition->getLabel() ? ' <label class="form-label select-label" for="' . Html::safe($definition->getColumn()) . '">
+                        ($definition->getLabel() ? ' <label class="form-label select-label" for="' . Html::safe($definition->getColumn()) . '">
                                                    ' . Html::safe($definition->getLabel()) . '
                                                  </label>' : '') . '
                                   </div>';
+                }
                 return parent::render();
 
             case 'textarea':

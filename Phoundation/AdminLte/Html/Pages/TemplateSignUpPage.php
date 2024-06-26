@@ -6,6 +6,7 @@ namespace Templates\Phoundation\AdminLte\Html\Pages;
 
 use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\UrlBuilder;
 use Phoundation\Web\Requests\Response;
@@ -39,6 +40,7 @@ class TemplateSignUpPage extends TemplateRenderer
                                         <div class="card-body">
                                             <p class="login-box-msg">' . tr('Register a new membership') . '</p>
                                             <form action="' . UrlBuilder::getWww() . '" method="post">
+                                                ' . Csrf::getHiddenElement() . '
                                                 <div class="input-group mb-3">
                                                     <input type="text" class="form-control" placeholder="Full name">
                                                     <div class="input-group-append">

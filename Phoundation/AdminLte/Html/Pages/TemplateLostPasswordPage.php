@@ -7,6 +7,7 @@ namespace Templates\Phoundation\AdminLte\Html\Pages;
 use Phoundation\Core\Core;
 use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\UrlBuilder;
 use Phoundation\Web\Requests\Response;
@@ -38,7 +39,8 @@ class TemplateLostPasswordPage extends TemplateRenderer
                                         <div class="card-body">
                                             <p class="login-box-msg">' . tr('Please provide your email address and we will send you a link where you can re-establish your password') . '</p>
 
-                                            <form action="' . UrlBuilder::getWww() . '" method="post">';
+                                            <form action="' . UrlBuilder::getWww() . '" method="post">
+                                                ' . Csrf::getHiddenElement();
 
         if (Session::supports('email')) {
             $this->render .= '                      <div class="input-group mb-3">

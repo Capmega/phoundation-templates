@@ -8,6 +8,7 @@ use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Icons\FullScreen;
 use Phoundation\Web\Html\Components\Input\Interfaces\RenderInterface;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Enums\EnumDisplayMode;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
@@ -87,6 +88,7 @@ class TemplateTopPanel extends TemplateRenderer
                                         </a>
                                         <div class="navbar-search-block">
                                           <form class="form-inline">
+                                            ' . Csrf::getHiddenElement() . '
                                             <div class="input-group input-group-sm">
                                               <input class="form-control form-control-navbar" type="search" placeholder="' . tr('Search everywhere') . '" aria-label="' . tr('Search everywhere') . '">
                                               <div class="input-group-append">

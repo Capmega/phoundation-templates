@@ -6,6 +6,7 @@ namespace Templates\Phoundation\AdminLte\Html\Pages;
 
 use Phoundation\Core\Core;
 use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\UrlBuilder;
 use Phoundation\Web\Requests\Response;
@@ -38,6 +39,7 @@ class TemplateLostPasswordUpdatedPage extends TemplateRenderer
                                             <p class="login-box-msg">' . tr('Your password has been updated. Please return to the sign-in page to continue...') . '</p>
 
                                             <form action="' . UrlBuilder::getWww() . '" method="post">
+                                                ' . Csrf::getHiddenElement() . '
                                                 <div class="row mb-3">
                                                     <div class="col-12">
                                                         <a href="' . UrlBuilder::getWww('/sign-out.html') . '" class="btn btn-outline-secondary btn-block">' . tr('Go to sign-in page') . '</a>

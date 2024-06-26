@@ -5,6 +5,9 @@ declare(strict_types=1);
 
 namespace Templates\None;
 
+use Phoundation\Filesystem\FsDirectory;
+use Phoundation\Filesystem\FsRestrictions;
+use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
 use Phoundation\Web\Html\Template\Template;
 use Templates\None\Html\Components\Menu;
 
@@ -51,10 +54,10 @@ class None extends Template
     /**
      * Returns the path for this template
      *
-     * @return string
+     * @return FsDirectoryInterface
      */
-    public function getDirectory(): string
+    public function getDirectory(): FsDirectoryInterface
     {
-        return __DIR__ . '/';
+        return new FsDirectory(__DIR__ . '/', FsRestrictions::getReadonly(DIRECTORY_ROOT, 'Templates\Phoundation\None::getDirectory()'));
     }
 }
