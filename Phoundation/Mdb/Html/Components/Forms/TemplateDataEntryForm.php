@@ -18,7 +18,6 @@ namespace Templates\Phoundation\Mdb\Html\Components\Forms;
 use Phoundation\Web\Html\Components\Forms\DataEntryForm;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
-
 class TemplateDataEntryForm extends TemplateRenderer
 {
     /**

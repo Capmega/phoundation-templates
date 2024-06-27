@@ -26,7 +26,6 @@ use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Templates\Phoundation\Mdb\TemplatePage;
 
-
 class TemplateDataEntryFormColumn extends TemplateRenderer
 {
     /**
