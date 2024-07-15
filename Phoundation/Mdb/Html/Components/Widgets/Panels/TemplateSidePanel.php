@@ -43,7 +43,7 @@ class TemplateSidePanel extends TemplateRenderer
     {
         $this->render = '   <nav data-mdb-sidenav-init id="sidenav-9" data-mdb-scroll-container="#scroll-container" class="sidenav sidenav-sm" data-mdb-hidden="true" data-mdb-accordion="true">
                               <a href="' . UrlBuilder::getWww('index') . '" data-mdb-ripple-init class="d-flex justify-content-center py-4 mb-3" style="border-bottom: 2px solid #f5f5f5" data-mdb-ripple-color="primary">
-                                <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" draggable="false">
+                                <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" width="250px" draggable="false">
                               </a>
 
                               <a data-mdb-ripple-init class="d-flex py-4 mb-3 justify-content-center" style="border-bottom: 2px solid #f5f5f5" href="' . UrlBuilder::getWww('profile') . '" data-mdb-ripple-color="primary">
@@ -65,7 +65,7 @@ class TemplateSidePanel extends TemplateRenderer
 
         $this->render = ' <aside class="main-sidebar sidebar-dark-primary elevation-4">
                             <a href="' . UrlBuilder::getWww('index') . '" class="brand-link">
-                              <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" class="brand-image elevation-3" style="opacity: .8">
+                              <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" class="brand-image elevation-3" style="opacity: .8" width="250px">
                             </a>
                             <div class="sidebar">
                               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
