@@ -1,13 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Boxes;
-
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateSmallBox
  *
@@ -18,12 +10,21 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Boxes;
+
+use Phoundation\Web\Html\Components\Widgets\Boxes\SmallBox;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateSmallBox extends TemplateRenderer
 {
     /**
      * SmallBox class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Boxes\SmallBox $component)
+    public function __construct(SmallBox $component)
     {
         parent::__construct($component);
     }

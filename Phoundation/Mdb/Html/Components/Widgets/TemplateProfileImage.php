@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Widgets;
-
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateProfileImage
  *
@@ -17,12 +10,20 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Widgets;
+
+use Phoundation\Web\Html\Components\Widgets\ProfileImage;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateProfileImage extends TemplateRenderer
 {
     /**
      * ProfileImage class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\ProfileImage $component)
+    public function __construct(ProfileImage $component)
     {
         parent::__construct($component);
     }

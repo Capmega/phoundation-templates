@@ -1,14 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Cards;
-
-use Phoundation\Enums\EnumOrientation;
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateCard
  *
@@ -19,12 +10,22 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Cards;
+
+use Phoundation\Enums\EnumOrientation;
+use Phoundation\Web\Html\Components\Widgets\Cards\Card;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateCard extends TemplateRenderer
 {
     /**
      * Card class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Cards\Card $component)
+    public function __construct(Card $component)
     {
         parent::__construct($component);
     }

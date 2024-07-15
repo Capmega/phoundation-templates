@@ -1,15 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Forms;
-
-use Phoundation\Web\Html\Components\Forms\DataEntryForm;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
- * Class DataEntryForm
+ * Class TemplateDataEntryForm
  *
  *
  *
@@ -18,6 +10,14 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Forms;
+
+use Phoundation\Web\Html\Components\Forms\DataEntryForm;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateDataEntryForm extends TemplateRenderer
 {
     /**

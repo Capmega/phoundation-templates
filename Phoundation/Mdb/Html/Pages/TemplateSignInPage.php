@@ -28,7 +28,9 @@ class TemplateSignInPage extends TemplateRenderer
     public function render(): ?string
     {
         // This page will build its own body
-        Response::setBuildBody(false);
+        Response::setRenderMainWrapper(false);
+        Response::setPageTitle(tr('Please sign in'));
+        Response::setHeaderTitle(tr('Please sign in'));
 
         $sso      = '';
         $terms    = '<a href="' . UrlBuilder::getWww('terms') . '">' . tr('terms and conditions') . '</a>';

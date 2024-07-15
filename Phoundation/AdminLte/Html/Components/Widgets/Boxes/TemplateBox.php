@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Boxes;
-
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateBox
  *
@@ -17,12 +10,20 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Boxes;
+
+use Phoundation\Web\Html\Components\Widgets\Boxes\Box;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 abstract class TemplateBox extends TemplateRenderer
 {
     /**
      * Box class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Boxes\Box $component)
+    public function __construct(Box $component)
     {
         parent::__construct($component);
     }

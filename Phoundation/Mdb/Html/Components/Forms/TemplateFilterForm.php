@@ -25,6 +25,7 @@ class TemplateFilterForm extends DataEntryForm
      */
     public function __construct(FilterForm $element)
     {
+showdie($element);
         parent::__construct($element);
     }
 }

@@ -1,17 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-
-namespace Templates\Phoundation\AdminLte;
-
-use Phoundation\Filesystem\FsDirectory;
-use Phoundation\Filesystem\FsRestrictions;
-use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
-use Phoundation\Web\Html\Template\Template;
-use Templates\Phoundation\AdminLte\Html\Components\Widgets\Menus\TemplateMenu;
-
-
 /**
  * Class AdminLte
  *
@@ -22,6 +10,17 @@ use Templates\Phoundation\AdminLte\Html\Components\Widgets\Menus\TemplateMenu;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package AdminLte\Web
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte;
+
+use Phoundation\Filesystem\FsDirectory;
+use Phoundation\Filesystem\FsRestrictions;
+use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
+use Phoundation\Web\Html\Template\Template;
+use Templates\Phoundation\AdminLte\Html\Components\Widgets\Menus\TemplateMenu;
+
 class AdminLte extends Template
 {
     /**

@@ -1,13 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Icons;
-
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateIcons
  *
@@ -18,12 +10,21 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Icons;
+
+use Phoundation\Web\Html\Components\Icons\Icons;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateIcons extends TemplateRenderer
 {
     /**
      * Icons class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Icons\Icons $component)
+    public function __construct(Icons $component)
     {
         parent::__construct($component);
     }

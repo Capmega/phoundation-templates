@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Input;
-
-use Templates\Mdb\Html\Components\Input\InputDateTimeRange;
-
-
 /**
  * Class TemplateInputDateTimeRange
  *
@@ -17,6 +10,13 @@ use Templates\Mdb\Html\Components\Input\InputDateTimeRange;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Input;
+
+use Phoundation\Web\Html\Components\Input\InputDateTimeRange;
+
 class TemplateInputDateTimeRange extends TemplateInput
 {
     /**

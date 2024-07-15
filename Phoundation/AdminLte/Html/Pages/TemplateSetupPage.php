@@ -25,7 +25,7 @@ class TemplateSetupPage extends TemplateRenderer
     public function render(): ?string
     {
         // This page will build its own body
-        Response::setBuildBody(false);
+        Response::setRenderMainWrapper(false);
 
         $this->render = '   ';
 

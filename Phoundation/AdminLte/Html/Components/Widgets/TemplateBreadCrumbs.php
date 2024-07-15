@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets;
-
-use Phoundation\Utils\Strings;
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
-
-
 /**
  * Class TemplateBreadCrumbs
  *
@@ -20,12 +10,23 @@ use Phoundation\Web\Http\UrlBuilder;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets;
+
+use Phoundation\Utils\Strings;
+use Phoundation\Web\Html\Components\Widgets\BreadCrumbs;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+use Phoundation\Web\Http\UrlBuilder;
+
 class TemplateBreadCrumbs extends TemplateRenderer
 {
     /**
      * BreadCrumbs class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\BreadCrumbs $component)
+    public function __construct(BreadCrumbs $component)
     {
         parent::__construct($component);
     }

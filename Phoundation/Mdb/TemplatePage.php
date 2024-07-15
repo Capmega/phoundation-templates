@@ -31,7 +31,7 @@ use Phoundation\Web\Requests\Response;
 class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 {
     /**
-     * ExecuteExecuteInterface, builds and returns the page output, according to the template.
+     * Execute, builds and returns the page output, according to the template.
      *
      * Either use the default execution steps from parent::execute($target), or write your own execution steps here.
      * Once the output has been generated, it should be returned.
@@ -40,13 +40,16 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
      */
     public function execute(): ?string
     {
-        // Generate panels used by the plugins, then start all plugins
+        // Generate panels used by the plugins
         Request::setPanelsObject($this->getAvailablePanelsObject());
+
+        // Start all plugins
         Plugins::start();
 
-        $body = $this->renderBody();
+        // Render the page body
+        $body = $this->renderMain();
 
-        if (Request::getMainContentsOnly()) {
+        if (Response::getRenderMainContentsOnly()) {
             return $body;
         }
 
@@ -54,7 +57,7 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
         $output = $this->renderHtmlHeadTag();
         Response::getHtmlHeadersSent(true);
 
-        if (Response::getBuildBodyWrapper()) {
+        if (Response::getRenderMainWrapper()) {
             $output .=  '<body class="mdb-skin-custom" data-mdb-spy="scroll" data-mdb-target="#scrollspy" data-mdb-offset="250">' .
                             Response::getFlashMessages()->render() .
                             Request::getPanelsObject()->get('top', false)?->render() .
@@ -145,13 +148,13 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
      *
      * @return string|null
      */
-    public function renderBody(): ?string
+    public function renderMain(): ?string
     {
         DataEntryFormRows::setForceRows(true);
 
-        $body = parent::renderBody();
+        $body = parent::renderMain();
 
-        if (Request::getMainContentsOnly() or !Response::getBuildBodyWrapper()) {
+        if (Response::getRenderMainContentsOnly() or !Response::getRenderMainWrapper()) {
             return $body;
         }
 

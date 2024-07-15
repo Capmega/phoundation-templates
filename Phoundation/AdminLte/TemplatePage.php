@@ -30,7 +30,7 @@ use Phoundation\Web\Requests\Response;
 class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 {
     /**
-     * ExecuteExecuteInterface, builds and returns the page output, according to the template.
+     * Execute, builds and returns the page output, according to the template.
      *
      * Either use the default execution steps from parent::execute($target), or write your own execution steps here.
      * Once the output has been generated, it should be returned.
@@ -39,12 +39,16 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
      */
     public function execute(): ?string
     {
+        // Generate panels used by the plugins
         Request::setPanelsObject($this->getAvailablePanelsObject());
+
+        // Start all plugins
         Plugins::start();
 
-        $body = $this->renderBody();
+        // Render the page body
+        $body = $this->renderMain();
 
-        if (Request::getMainContentsOnly()) {
+        if (Response::getRenderMainContentsOnly()) {
             return $body;
         }
 
@@ -52,7 +56,7 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
         $output = $this->renderHtmlHeadTag();
         Response::getHtmlHeadersSent(true);
 
-        if (Response::getBuildBodyWrapper()) {
+        if (Response::getRenderMainWrapper()) {
             $output .= ' <body class="sidebar-mini' . (Config::get('web.panels.sidebar.collapsed', false) ? ' sidebar-collapse' : '') . '" style="height: auto;">
                             <div class="wrapper">' .
                                 Response::getFlashMessages()->render() .
@@ -149,15 +153,15 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
      *
      * @return string|null
      */
-    public function renderBody(): ?string
+    public function renderMain(): ?string
     {
-        $body = parent::renderBody();
+        $body = parent::renderMain();
 
-        if (Request::getMainContentsOnly()) {
+        if (Response::getRenderMainContentsOnly()) {
             return $body;
         }
 
-        if (Response::getBuildBodyWrapper()) {
+        if (Response::getRenderMainWrapper()) {
             $body = '   <div class="' . Response::getClass('content-wrapper', 'content-wrapper') .  '" style="min-height: 1518.06px;">
                            ' . Request::getPanelsObject()->get('header', false)?->render() . '
                             <section class="content">

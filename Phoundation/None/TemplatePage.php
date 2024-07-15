@@ -20,7 +20,7 @@ use Phoundation\Web\Requests\Response;
 class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 {
     /**
-     * ExecuteExecuteInterface, builds and returns the page output according to the template.
+     * Execute, builds and returns the page output according to the template.
      *
      * Either use the default execution steps from parent::execute($target), or write your own execution steps here.
      * Once the output has been generated, it should be returned.
@@ -29,7 +29,7 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
      */
     public function execute(): ?string
     {
-        return $this->renderBody();
+        return $this->renderMain();
     }
 
 

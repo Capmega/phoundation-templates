@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Panels;
-
-use Phoundation\Exception\OutOfBoundsException;
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Requests\Response;
-
-
 /**
  * Class HeaderPanel
  *
@@ -20,12 +10,23 @@ use Phoundation\Web\Requests\Response;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Panels;
+
+use Phoundation\Exception\OutOfBoundsException;
+use Phoundation\Web\Html\Components\Widgets\Panels\HeaderPanel;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+use Phoundation\Web\Requests\Response;
+
 class TemplateHeaderPanel extends TemplateRenderer
 {
     /**
      * HeaderPanel class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Panels\HeaderPanel $component)
+    public function __construct(HeaderPanel $component)
     {
         parent::__construct($component);
     }

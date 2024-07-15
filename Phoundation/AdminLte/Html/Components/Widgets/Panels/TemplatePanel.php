@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Panels;
-
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplatePanel
  *
@@ -17,12 +10,20 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Panels;
+
+use Phoundation\Web\Html\Components\Widgets\Panels\Panel;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplatePanel extends TemplateRenderer
 {
     /**
      * Panel class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Panels\Panel $component)
+    public function __construct(Panel $component)
     {
         parent::__construct($component);
     }

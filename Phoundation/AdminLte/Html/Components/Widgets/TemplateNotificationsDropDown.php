@@ -1,17 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets;
-
-use Phoundation\Date\Date;
-use Phoundation\Exception\OutOfBoundsException;
-use Phoundation\Notifications\Html\Components\Modals\NotificationModal;
-use Phoundation\Utils\Strings;
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateNotificationsDropDown
  *
@@ -22,12 +10,25 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets;
+
+use Phoundation\Date\Date;
+use Phoundation\Exception\OutOfBoundsException;
+use Phoundation\Notifications\Html\Components\Modals\NotificationModal;
+use Phoundation\Utils\Strings;
+use Phoundation\Web\Html\Components\Widgets\NotificationsDropDown;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateNotificationsDropDown extends TemplateRenderer
 {
     /**
      * NotificationsDropDown class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\NotificationsDropDown $component)
+    public function __construct(NotificationsDropDown $component)
     {
         parent::__construct($component);
     }

@@ -1,16 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets;
-
-use Phoundation\Date\Date;
-use Phoundation\Exception\OutOfBoundsException;
-use Phoundation\Utils\Strings;
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateLanguagesDropDown
  *
@@ -21,12 +10,24 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets;
+
+use Phoundation\Date\Date;
+use Phoundation\Exception\OutOfBoundsException;
+use Phoundation\Utils\Strings;
+use Phoundation\Web\Html\Components\Widgets\LanguagesDropDown;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateLanguagesDropDown extends TemplateRenderer
 {
     /**
      * LanguagesDropDown class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\LanguagesDropDown $component)
+    public function __construct(LanguagesDropDown $component)
     {
         parent::__construct($component);
     }

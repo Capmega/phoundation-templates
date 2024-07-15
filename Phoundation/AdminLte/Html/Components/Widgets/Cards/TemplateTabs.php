@@ -1,13 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Cards;
-
-use Phoundation\Exception\UnderConstructionException;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateCard
  *
@@ -18,12 +10,21 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Cards;
+
+use Phoundation\Exception\UnderConstructionException;
+use Phoundation\Web\Html\Components\Widgets\Tabs\Tabs;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateTabs extends TemplateRenderer
 {
     /**
      * Card class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Cards\Tabs $component)
+    public function __construct(Tabs $component)
     {
         parent::__construct($component);
     }

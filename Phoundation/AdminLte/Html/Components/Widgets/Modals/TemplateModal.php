@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Modals;
-
-use Phoundation\Web\Html\Template\TemplateRenderer;
-
-
 /**
  * Class TemplateModal
  *
@@ -17,12 +10,20 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Modals;
+
+use Phoundation\Web\Html\Components\Widgets\Modals\Modal;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateModal extends TemplateRenderer
 {
     /**
      * Modal class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Modals\Modal $component)
+    public function __construct(Modal $component)
     {
         parent::__construct($component);
     }

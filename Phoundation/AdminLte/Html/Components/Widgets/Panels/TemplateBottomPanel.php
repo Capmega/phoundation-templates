@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Panels;
-
-use Phoundation\Core\Core;
-use Phoundation\Utils\Config;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
-
-
 /**
  * Class TemplateBottomPanel
  *
@@ -20,12 +10,23 @@ use Phoundation\Web\Http\UrlBuilder;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Panels;
+
+use Phoundation\Core\Core;
+use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+use Phoundation\Web\Http\UrlBuilder;
+
 class TemplateBottomPanel extends TemplateRenderer
 {
     /**
      * BottomPanel class constructor
      */
-    public function __construct(\Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel $component)
+    public function __construct(BottomPanel $component)
     {
         parent::__construct($component);
     }

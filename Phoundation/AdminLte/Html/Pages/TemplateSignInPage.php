@@ -28,7 +28,9 @@ class TemplateSignInPage extends TemplateRenderer
     public function render(): ?string
     {
         // This page will build its own body
-        Response::setBuildBody(false);
+        Response::setRenderMainWrapper(false);
+        Response::setPageTitle(tr('Please sign in'));
+        Response::setHeaderTitle(tr('Please sign in'));
 
         $this->render = '   <body class="hold-transition login-page" style="background: url(' . UrlBuilder::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/signin.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover;">
                                 <div class="login-box">
