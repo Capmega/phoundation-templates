@@ -1,14 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Panels;
-
-use Phoundation\Core\Core;
-use Phoundation\Utils\Config;
-use Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
 
 
 /**
@@ -21,6 +12,17 @@ use Phoundation\Web\Http\UrlBuilder;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Panels;
+
+use Phoundation\Core\Core;
+use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+use Phoundation\Web\Http\UrlBuilder;
+
 class TemplateBottomPanel extends TemplateRenderer
 {
     /**

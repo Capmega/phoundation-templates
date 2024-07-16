@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Pages;
-
-use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Requests\Response;
-
-
-throw new \Phoundation\Exception\UnderConstructionException();
-
 /**
  * Class TemplateLostPasswordPage
  *
@@ -20,6 +10,17 @@ throw new \Phoundation\Exception\UnderConstructionException();
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Phoundation\Web
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Pages;
+
+use Phoundation\Web\Html\Template\TemplateRenderer;
+use Phoundation\Web\Requests\Response;
+
+
+throw new \Phoundation\Exception\UnderConstructionException();
+
 class TemplateSetupPage extends TemplateRenderer
 {
     public function render(): ?string

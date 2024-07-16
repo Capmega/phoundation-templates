@@ -1,11 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Input;
-
-use Phoundation\Web\Html\Components\Input\InputMultiButtonText;
-use Phoundation\Web\Html\Html;
 
 
 /**
@@ -18,6 +12,14 @@ use Phoundation\Web\Html\Html;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Input;
+
+use Phoundation\Web\Html\Components\Input\InputMultiButtonText;
+use Phoundation\Web\Html\Html;
+
 class TemplateInputMultiButtonText extends TemplateInput
 {
     /**

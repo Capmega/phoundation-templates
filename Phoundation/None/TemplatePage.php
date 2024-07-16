@@ -1,10 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\None;
-
-use Phoundation\Web\Requests\Response;
 
 
 /**
@@ -17,6 +12,13 @@ use Phoundation\Web\Requests\Response;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\None
  */
+
+declare(strict_types=1);
+
+namespace Templates\None;
+
+use Phoundation\Web\Requests\Response;
+
 class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 {
     /**

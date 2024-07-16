@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Layouts;
-
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Layouts\GridColumn;
-use Phoundation\Web\Html\Template\TemplateRenderer;
 
 
 /**
@@ -19,6 +12,15 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Layouts;
+
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Layouts\GridColumn;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateGridColumn extends TemplateRenderer
 {
     /**

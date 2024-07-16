@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-
-namespace Templates\Phoundation\Mdb;
-
-use Phoundation\Filesystem\FsDirectory;
-use Phoundation\Filesystem\FsRestrictions;
-use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
-use Phoundation\Web\Html\Template\Template;
-use Templates\Phoundation\Mdb\Html\Components\Widgets\Menus\TemplateMenu;
 
 
 /**
@@ -22,6 +12,18 @@ use Templates\Phoundation\Mdb\Html\Components\Widgets\Menus\TemplateMenu;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Mdb\Web
  */
+
+declare(strict_types=1);
+
+
+namespace Templates\Phoundation\Mdb;
+
+use Phoundation\Filesystem\FsDirectory;
+use Phoundation\Filesystem\FsRestrictions;
+use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
+use Phoundation\Web\Html\Template\Template;
+use Templates\Phoundation\Mdb\Html\Components\Widgets\Menus\TemplateMenu;
+
 class Mdb extends Template
 {
     /**

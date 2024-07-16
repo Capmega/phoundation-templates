@@ -1,11 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Input;
-
-use Phoundation\Exception\OutOfBoundsException;
-use Phoundation\Web\Html\Components\Input\InputDateRange;
 
 
 /**
@@ -18,6 +12,14 @@ use Phoundation\Web\Html\Components\Input\InputDateRange;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Input;
+
+use Phoundation\Exception\OutOfBoundsException;
+use Phoundation\Web\Html\Components\Input\InputDateRange;
+
 class TemplateInputDateRange extends TemplateInput
 {
     /**

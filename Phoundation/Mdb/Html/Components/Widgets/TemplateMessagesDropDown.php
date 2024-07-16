@@ -1,13 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Widgets;
-
-use Phoundation\Exception\OutOfBoundsException;
-use Phoundation\Web\Html\Components\Widgets\MessagesDropDown;
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Template\TemplateRenderer;
 
 
 /**
@@ -20,6 +12,16 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Widgets;
+
+use Phoundation\Exception\OutOfBoundsException;
+use Phoundation\Web\Html\Components\Widgets\MessagesDropDown;
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateMessagesDropDown extends TemplateRenderer
 {
     /**

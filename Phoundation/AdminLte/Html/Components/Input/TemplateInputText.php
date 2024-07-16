@@ -1,10 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Components\Input;
-
-use Phoundation\Web\Html\Components\Input\InputText;
 
 
 /**
@@ -17,6 +12,13 @@ use Phoundation\Web\Html\Components\Input\InputText;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Components\Input;
+
+use Phoundation\Web\Html\Components\Input\InputText;
+
 class TemplateInputText extends TemplateInput
 {
     /**

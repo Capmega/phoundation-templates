@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Pages;
-
-use Phoundation\Core\Core;
-use Phoundation\Utils\Config;
-use Phoundation\Web\Html\Csrf;
-use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
-use Phoundation\Web\Requests\Response;
 
 
 /**
@@ -22,6 +12,18 @@ use Phoundation\Web\Requests\Response;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Phoundation\Web
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Pages;
+
+use Phoundation\Core\Core;
+use Phoundation\Utils\Config;
+use Phoundation\Web\Html\Csrf;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Requests\Response;
+
 class TemplateForcePasswordUpdatePage extends TemplateRenderer
 {
     public function render(): ?string

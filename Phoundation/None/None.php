@@ -1,15 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-
-namespace Templates\None;
-
-use Phoundation\Filesystem\FsDirectory;
-use Phoundation\Filesystem\FsRestrictions;
-use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
-use Phoundation\Web\Html\Template\Template;
-use Templates\None\Html\Components\Menu;
 
 
 /**
@@ -23,6 +13,18 @@ use Templates\None\Html\Components\Menu;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package None\Web
  */
+
+declare(strict_types=1);
+
+
+namespace Templates\None;
+
+use Phoundation\Filesystem\FsDirectory;
+use Phoundation\Filesystem\FsRestrictions;
+use Phoundation\Filesystem\Interfaces\FsDirectoryInterface;
+use Phoundation\Web\Html\Template\Template;
+use Templates\None\Html\Components\Menu;
+
 class None extends Template
 {
     /**

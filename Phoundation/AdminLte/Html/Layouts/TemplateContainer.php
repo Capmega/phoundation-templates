@@ -1,12 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Html\Layouts;
-
-use Phoundation\Web\Html\Html;
-use Phoundation\Web\Html\Layouts\Container;
-use Phoundation\Web\Html\Template\TemplateRenderer;
 
 
 /**
@@ -19,6 +12,15 @@ use Phoundation\Web\Html\Template\TemplateRenderer;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Html\Layouts;
+
+use Phoundation\Web\Html\Html;
+use Phoundation\Web\Html\Layouts\Container;
+use Phoundation\Web\Html\Template\TemplateRenderer;
+
 class TemplateContainer extends TemplateRenderer
 {
     /**

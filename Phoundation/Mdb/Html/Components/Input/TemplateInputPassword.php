@@ -1,10 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Input;
-
-use Phoundation\Web\Html\Components\Input\InputPassword;
 
 
 /**
@@ -17,6 +12,13 @@ use Phoundation\Web\Html\Components\Input\InputPassword;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Input;
+
+use Phoundation\Web\Html\Components\Input\InputPassword;
+
 class TemplateInputPassword extends TemplateInput
 {
     /**

@@ -1,10 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\AdminLte\Exception;
-
-use Templates\Exception\TemplatesException;
 
 
 /**
@@ -17,6 +12,13 @@ use Templates\Exception\TemplatesException;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\AdminLte\Exception;
+
+use Templates\Exception\TemplatesException;
+
 class AdminLteException extends TemplatesException
 {
 }

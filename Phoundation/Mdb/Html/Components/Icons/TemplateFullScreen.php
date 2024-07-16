@@ -1,11 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Templates\Phoundation\Mdb\Html\Components\Icons;
-
-use Phoundation\Web\Html\Components\Icons\FullScreen;
-use Phoundation\Web\Html\Components\Script;
 
 
 /**
@@ -18,6 +12,14 @@ use Phoundation\Web\Html\Components\Script;
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
+declare(strict_types=1);
+
+namespace Templates\Phoundation\Mdb\Html\Components\Icons;
+
+use Phoundation\Web\Html\Components\Icons\FullScreen;
+use Phoundation\Web\Html\Components\Script;
+
 class TemplateFullScreen extends TemplateIcon
 {
     /**
