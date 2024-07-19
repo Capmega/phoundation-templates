@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Class TemplateSignIn form
  *
