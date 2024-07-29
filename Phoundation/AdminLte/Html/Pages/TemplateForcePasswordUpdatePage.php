@@ -19,7 +19,7 @@ use Phoundation\Core\Core;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 use Phoundation\Web\Requests\Response;
 
 class TemplateForcePasswordUpdatePage extends TemplateRenderer

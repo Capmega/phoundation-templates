@@ -23,7 +23,7 @@ use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Enums\EnumDisplayMode;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 use Templates\Phoundation\AdminLte\Exception\AdminLteException;
 
 class TemplateTopPanel extends TemplateRenderer
@@ -139,7 +139,7 @@ class TemplateTopPanel extends TemplateRenderer
 
                 case 'sign-out':
                     $this->render .= '<li class="nav-item">
-                                        <a class="nav-link" href="' . Html::safe(UrlBuilder::getWww('sign-out')) . '" role="button">
+                                        <a class="nav-link" href="' . Html::safe(Url::getWww('sign-out')) . '" role="button">
                                           <i class="fas fa-sign-out-alt"></i>
                                         </a>
                                       </li>';

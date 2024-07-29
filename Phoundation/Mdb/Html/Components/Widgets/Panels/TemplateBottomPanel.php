@@ -19,7 +19,7 @@ use Phoundation\Core\Core;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 
 class TemplateBottomPanel extends TemplateRenderer
 {
@@ -40,7 +40,7 @@ class TemplateBottomPanel extends TemplateRenderer
         if (Config::getBoolean('web.panels.bottom.enabled', true)) {
             $phoudation = '<a href="https://phoundation.org/">Phoundation</a>';
             $template   = tr('template :name', [':name' => '<a href="https://mdbootstrap.com/">' . tr('Mdb') . '</a>']);
-            $project    = '<a href="' . UrlBuilder::getCurrentDomainRootUrl() . '">' . Config::getString('project.name', 'Phoundation') . '</a>';
+            $project    = '<a href="' . Url::getCurrentDomainRootUrl() . '">' . Config::getString('project.name', 'Phoundation') . '</a>';
 
             return '  <footer class="bg-body-tertiary text-center fixed-bottom">
                       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">

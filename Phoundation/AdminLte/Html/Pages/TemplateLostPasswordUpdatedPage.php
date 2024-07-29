@@ -19,7 +19,7 @@ use Phoundation\Core\Core;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 use Phoundation\Web\Requests\Response;
 
 class TemplateLostPasswordUpdatedPage extends TemplateRenderer
@@ -29,7 +29,7 @@ class TemplateLostPasswordUpdatedPage extends TemplateRenderer
         // This page will build its own body
         Response::setRenderMainWrapper(false);
 
-        $this->render = '   <body class="hold-transition login-page" style="background: url(' . UrlBuilder::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/password.jpg') .'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        $this->render = '   <body class="hold-transition login-page" style="background: url(' . Url::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/password.jpg') .'); background-position: center; background-repeat: no-repeat; background-size: cover;">
                                 <div class="login-box">
                                     <div class="card card-outline card-info">
                                         <div class="card-header text-center">
@@ -38,11 +38,11 @@ class TemplateLostPasswordUpdatedPage extends TemplateRenderer
                                         <div class="card-body">
                                             <p class="login-box-msg">' . tr('Your password has been updated. Please return to the sign-in page to continue...') . '</p>
 
-                                            <form action="' . UrlBuilder::getWww() . '" method="post">
+                                            <form action="' . Url::getWww() . '" method="post">
                                                 ' . Csrf::getHiddenElement() . '
                                                 <div class="row mb-3">
                                                     <div class="col-12">
-                                                        <a href="' . UrlBuilder::getWww('/sign-out.html') . '" class="btn btn-outline-secondary btn-block">' . tr('Go to sign-in page') . '</a>
+                                                        <a href="' . Url::getWww('/sign-out.html') . '" class="btn btn-outline-secondary btn-block">' . tr('Go to sign-in page') . '</a>
                                                     </div>
                                                 </div>
                                             </form>

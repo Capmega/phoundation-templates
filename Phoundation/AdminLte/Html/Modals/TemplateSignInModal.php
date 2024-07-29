@@ -22,7 +22,7 @@ use Phoundation\Web\Html\Layouts\Grid;
 use Phoundation\Web\Html\Layouts\GridColumn;
 use Phoundation\Web\Html\Layouts\GridRow;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 
 class TemplateSignInModal extends TemplateRenderer
 {
@@ -66,7 +66,7 @@ class TemplateSignInModal extends TemplateRenderer
             $("form#form-sign-in").submit(function(e) {
                 e.stopPropagation();
 
-                $.post("' . UrlBuilder::getAjax('sign-in') . '", $(this).serialize())
+                $.post("' . Url::getAjax('sign-in') . '", $(this).serialize())
                     .done(function (data, textStatus, jqXHR) {
                         $(".image-menu").replaceWith(data.html);
                         $("#signinModal").modal("hide");

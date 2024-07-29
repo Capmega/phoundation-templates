@@ -21,7 +21,7 @@ use Phoundation\Utils\Config;
 use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\Panels\SidePanel;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 
 class TemplateSidePanel extends TemplateRenderer
 {
@@ -42,14 +42,14 @@ class TemplateSidePanel extends TemplateRenderer
     public function render(): ?string
     {
         $this->render = '   <nav data-mdb-sidenav-init id="sidenav-9" data-mdb-scroll-container="#scroll-container" class="sidenav sidenav-sm" data-mdb-hidden="true" data-mdb-accordion="true">
-                              <a href="' . UrlBuilder::getWww('index') . '" data-mdb-ripple-init class="d-flex justify-content-center py-4 mb-3" style="border-bottom: 2px solid #f5f5f5" data-mdb-ripple-color="primary">
-                                <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" width="250px" draggable="false">
+                              <a href="' . Url::getWww('index') . '" data-mdb-ripple-init class="d-flex justify-content-center py-4 mb-3" style="border-bottom: 2px solid #f5f5f5" data-mdb-ripple-color="primary">
+                                <img src="' . Url::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" width="250px" draggable="false">
                               </a>
 
-                              <a data-mdb-ripple-init class="d-flex py-4 mb-3 justify-content-center" style="border-bottom: 2px solid #f5f5f5" href="' . UrlBuilder::getWww('profile') . '" data-mdb-ripple-color="primary">
+                              <a data-mdb-ripple-init class="d-flex py-4 mb-3 justify-content-center" style="border-bottom: 2px solid #f5f5f5" href="' . Url::getWww('profile') . '" data-mdb-ripple-color="primary">
                                 ' . Session::getUser()->getPicture()
                                         ->getHtmlElement()
-                                        ->setSrc(UrlBuilder::getImg('img/profiles/default.png'))
+                                        ->setSrc(Url::getImg('img/profiles/default.png'))
                                         ->setClass('img-circle elevation-2')
                                         ->setAlt(tr('Profile picture for :user', [':user' => Session::getUser()->getDisplayName()]))
                                         ->setWidth(32)
@@ -64,21 +64,21 @@ class TemplateSidePanel extends TemplateRenderer
         return parent::render();
 
         $this->render = ' <aside class="main-sidebar sidebar-dark-primary elevation-4">
-                            <a href="' . UrlBuilder::getWww('index') . '" class="brand-link">
-                              <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" class="brand-image elevation-3" style="opacity: .8" width="250px">
+                            <a href="' . Url::getWww('index') . '" class="brand-link">
+                              <img src="' . Url::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" class="brand-image elevation-3" style="opacity: .8" width="250px">
                             </a>
                             <div class="sidebar">
                               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                                 <div class="image">
                                   ' . Session::getUser()->getPicture()
                                         ->getHtmlElement()
-                                            ->setSrc(UrlBuilder::getImg('img/profiles/default.png'))
+                                            ->setSrc(Url::getImg('img/profiles/default.png'))
                                             ->setClass('img-circle elevation-2')
                                             ->setAlt(tr('Profile picture for :user', [':user' => Session::getUser()->getDisplayName()]))
                                             ->render() . '
                                 </div>
                                 <div class="info">
-                                  <a href="' . (Session::getUser()->isGuest() ? '#' : UrlBuilder::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUser()->getDisplayName() . '</a>
+                                  <a href="' . (Session::getUser()->isGuest() ? '#' : Url::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUser()->getDisplayName() . '</a>
                                 </div>
                               </div>
                               <div class="form-inline">

@@ -20,7 +20,7 @@ use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 use Phoundation\Web\Requests\Response;
 
 class TemplateSignInPage extends TemplateRenderer
@@ -33,8 +33,8 @@ class TemplateSignInPage extends TemplateRenderer
         Response::setHeaderTitle(tr('Please sign in'));
 
         $sso      = '';
-        $terms    = '<a href="' . UrlBuilder::getWww('terms') . '">' . tr('terms and conditions') . '</a>';
-        $register = '<a href="' . UrlBuilder::getWww('sign-up') . '">' . tr('Register') . '</a>';
+        $terms    = '<a href="' . Url::getWww('terms') . '">' . tr('terms and conditions') . '</a>';
+        $register = '<a href="' . Url::getWww('sign-up') . '">' . tr('Register') . '</a>';
 
         // Render SSO entries?
         if (Session::supports('facebook')) {
@@ -62,7 +62,7 @@ class TemplateSignInPage extends TemplateRenderer
         }
 
         // Render the signin page section
-        $signin   = '   <form method="post" action="' . UrlBuilder::getWww() . '">
+        $signin   = '   <form method="post" action="' . Url::getWww() . '">
                           ' . Csrf::getHiddenElement() . '
                           <div class="sign-in text-center h1">
                               ' . Config::getString('project.owner.label', '<span>Phoun</span>dation') . '
@@ -128,7 +128,7 @@ class TemplateSignInPage extends TemplateRenderer
 
         if (Session::supports('signup')) {
             // Render the signup page section
-            $signup = '     <form method="post" action="' . UrlBuilder::getWww() . '">
+            $signup = '     <form method="post" action="' . Url::getWww() . '">
                               ' . Csrf::getHiddenElement() . '
                               <div class="form-outline mb-4" data-mdb-input-init>
                                 <input type="text" id="registerName" class="form-control" />
@@ -189,7 +189,7 @@ class TemplateSignInPage extends TemplateRenderer
                               <!-- Heading -->
                               <section class="text-center text-md-start">
                                 <!-- Background gradient -->
-                                <div class="p-5" style="height: 200px; background: url(' . UrlBuilder::getImg('img/banners/' . Core::getProjectSeoName() . '/large.jpg') . ') no-repeat;">
+                                <div class="p-5" style="height: 200px; background: url(' . Url::getImg('img/banners/' . Core::getProjectSeoName() . '/large.jpg') . ') no-repeat;">
                                 </div>
                                 <!-- Background gradient -->
                               </section>

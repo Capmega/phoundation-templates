@@ -21,7 +21,7 @@ use Phoundation\Utils\Config;
 use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\Panels\SidePanel;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 
 class TemplateSidePanel extends TemplateRenderer
 {
@@ -42,21 +42,21 @@ class TemplateSidePanel extends TemplateRenderer
     public function render(): ?string
     {
         $this->render = ' <aside class="main-sidebar sidebar-dark-primary elevation-4">
-                            <a href="' . UrlBuilder::getCurrent() . '" class="brand-link">
-                              <img src="' . UrlBuilder::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" class="brand-image elevation-3" width="250px" style="opacity: .8">
+                            <a href="' . Url::getCurrent() . '" class="brand-link">
+                              <img src="' . Url::getImg('img/logos/' . Core::getProjectSeoName() . '/large.webp') . '" alt="' . tr(':project logo', [':project' => Strings::capitalize(Config::get('project.name'))]) . '" class="brand-image elevation-3" width="250px" style="opacity: .8">
                             </a>
                             <div class="sidebar">
                               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                                 <div class="image">
                                   ' . Session::getUser()->getPicture()
                                         ->getHtmlElement()
-                                            ->setSrc(UrlBuilder::getImg('img/profiles/default.png'))
+                                            ->setSrc(Url::getImg('img/profiles/default.png'))
                                             ->setClass('img-circle elevation-2')
                                             ->setAlt(tr('Profile picture for :user', [':user' => Session::getUser()->getDisplayName()]))
                                             ->render() . '
                                 </div>
                                 <div class="info">
-                                  <a href="' . (Session::getUser()->isGuest() ? '#' : UrlBuilder::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUser()->getDisplayName() . '</a>
+                                  <a href="' . (Session::getUser()->isGuest() ? '#' : Url::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUser()->getDisplayName() . '</a>
                                 </div>
                               </div>
                               <div class="form-inline">

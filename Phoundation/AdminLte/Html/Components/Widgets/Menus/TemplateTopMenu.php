@@ -18,7 +18,7 @@ namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Menus;
 use Phoundation\Web\Html\Components\Widgets\Menus\TopMenu;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 
 class TemplateTopMenu extends TemplateRenderer
 {
@@ -43,7 +43,7 @@ class TemplateTopMenu extends TemplateRenderer
                             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                         </li>
                         <li class="nav-item d-none d-sm-inline-block">
-                            <a href="' . Html::safe(UrlBuilder::getCurrent()) . '" class="nav-link">' . tr('Home') . '</a>
+                            <a href="' . Html::safe(Url::getCurrent()) . '" class="nav-link">' . tr('Home') . '</a>
                         </li>';
 
         if ($this->component->getSource()) {

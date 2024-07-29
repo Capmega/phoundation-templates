@@ -20,7 +20,7 @@ use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 use Phoundation\Web\Requests\Response;
 
 class TemplateLostPasswordPage extends TemplateRenderer
@@ -30,7 +30,7 @@ class TemplateLostPasswordPage extends TemplateRenderer
         // This page will build its own body
         Response::setRenderMainWrapper(false);
 
-        $this->render = '   <body class="hold-transition login-page" style="background: url(' . UrlBuilder::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/lost-password.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        $this->render = '   <body class="hold-transition login-page" style="background: url(' . Url::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/lost-password.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover;">
                                 <div class="login-box">
                                     <div class="card card-outline card-info">
                                         <div class="card-header text-center">
@@ -39,7 +39,7 @@ class TemplateLostPasswordPage extends TemplateRenderer
                                         <div class="card-body">
                                             <p class="login-box-msg">' . tr('Please provide your email address and we will send you a link where you can re-establish your password') . '</p>
 
-                                            <form action="' . UrlBuilder::getWww() . '" method="post">
+                                            <form action="' . Url::getWww() . '" method="post">
                                                 ' . Csrf::getHiddenElement();
 
         if (Session::supports('email')) {
@@ -60,7 +60,7 @@ class TemplateLostPasswordPage extends TemplateRenderer
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <a class="btn btn-outline-secondary btn-block" href="' . UrlBuilder::getWww('sign-in')->addQueries(isset_get($get['email']) ? 'email=' . $get['email'] : '', isset_get($get['redirect']) ? 'redirect=' . $get['redirect'] : '') . '">' . tr('Back to sign in') . '</a>
+                                                            <a class="btn btn-outline-secondary btn-block" href="' . Url::getWww('sign-in')->addQueries(isset_get($get['email']) ? 'email=' . $get['email'] : '', isset_get($get['redirect']) ? 'redirect=' . $get['redirect'] : '') . '">' . tr('Back to sign in') . '</a>
                                                         </div>
                                                     </div>';
         }

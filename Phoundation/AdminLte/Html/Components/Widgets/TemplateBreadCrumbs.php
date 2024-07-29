@@ -19,7 +19,7 @@ use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\BreadCrumbs;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 
 class TemplateBreadCrumbs extends TemplateRenderer
 {
@@ -52,7 +52,7 @@ class TemplateBreadCrumbs extends TemplateRenderer
                     $this->render .= '<li class="breadcrumb-item active">' . Html::safe($label) . '</li>';
 
                 } else {
-                    $this->render .= '<li class="breadcrumb-item"><a href="' . Html::safe(UrlBuilder::getWww($url)) . '">' . Html::safe($label) . '</a></li>';
+                    $this->render .= '<li class="breadcrumb-item"><a href="' . Html::safe(Url::getWww($url)) . '">' . Html::safe($label) . '</a></li>';
                 }
             }
         }

@@ -20,7 +20,7 @@ use Phoundation\Core\Sessions\Session;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Csrf;
 use Phoundation\Web\Html\Template\TemplateRenderer;
-use Phoundation\Web\Http\UrlBuilder;
+use Phoundation\Web\Http\Url;
 use Phoundation\Web\Requests\Response;
 
 class TemplateSignInPage extends TemplateRenderer
@@ -32,7 +32,7 @@ class TemplateSignInPage extends TemplateRenderer
         Response::setPageTitle(tr('Please sign in'));
         Response::setHeaderTitle(tr('Please sign in'));
 
-        $this->render = '   <body class="hold-transition login-page" style="background: url(' . UrlBuilder::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/signin.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        $this->render = '   <body class="hold-transition login-page" style="background: url(' . Url::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/signin.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover;">
                                 <div class="login-box">
                                   <!-- /.login-logo -->
                                   <div class="card card-outline card-info">
@@ -41,7 +41,7 @@ class TemplateSignInPage extends TemplateRenderer
                                     </div>
                                     <div class="card-body">
                                       <p class="login-box-msg">' . tr('Please sign in to start your session') . '</p>
-                                      <form action="' . UrlBuilder::getWww() . '" method="post">
+                                      <form action="' . Url::getWww() . '" method="post">
                                             ' . Csrf::getHiddenElement();
 
                                             if (Session::supports('email')) {
@@ -101,13 +101,13 @@ class TemplateSignInPage extends TemplateRenderer
 
         if (Session::supports('lost-password')) {
             $this->render .= '        <p class="mb-1">
-                                          <a href="' . UrlBuilder::getWww('/lost-password.html')->addQueries(isset_get($post['email']) ? 'email=' . $post['email'] : '', isset_get($post['redirect']) ? 'redirect=' . $post['redirect'] : '') . '">' . tr('I forgot my password') . '</a>
+                                          <a href="' . Url::getWww('/lost-password.html')->addQueries(isset_get($post['email']) ? 'email=' . $post['email'] : '', isset_get($post['redirect']) ? 'redirect=' . $post['redirect'] : '') . '">' . tr('I forgot my password') . '</a>
                                       </p>';
         }
 
         if (Session::supports('register')) {
             $this->render .= '        <p class="mb-0">
-                                          <a href="' . UrlBuilder::getWww('/sign-in.html') . '" class="text-center">' . tr('Register a new membership') . '</a>
+                                          <a href="' . Url::getWww('/sign-in.html') . '" class="text-center">' . tr('Register a new membership') . '</a>
                                       </p>';
         }
 
