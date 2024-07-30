@@ -58,17 +58,16 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
         Response::getHtmlHeadersSent(true);
 
         if (Response::getRenderMainWrapper()) {
-            $output .=  '<body class="mdb-skin-custom" data-mdb-spy="scroll" data-mdb-target="#scrollspy" data-mdb-offset="250">' .
-                            Response::getFlashMessages()->render() .
-                            Request::getPanelsObject()->get('top', false)?->render() .
-                            Request::getPanelsObject()->get('left')?->render() .
-                            $body .
-                            Request::getPanelsObject()->get('bottom', false)?->render();
-        } else {
-            // Page requested that no body parts be built
-            $output .= $body;
+            $body    = Request::getPanelsObject()->get('top', false)?->render() .
+                       Request::getPanelsObject()->get('left')?->render() .
+                       $body .
+                       Request::getPanelsObject()->get('bottom', false)?->render();
+
+            $output .=  '<body class="mdb-skin-custom" data-mdb-spy="scroll" data-mdb-target="#scrollspy" data-mdb-offset="250">';
         }
 
+        // Page requested that no body parts be built
+        $output .= Response::getFlashMessagesObject()->render() . $body;
         $output .= $this->renderHtmlFooters();
         $output  = Html::minify($output);
 

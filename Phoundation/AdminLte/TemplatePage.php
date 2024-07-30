@@ -15,7 +15,10 @@ declare(strict_types=1);
 
 namespace Templates\Phoundation\AdminLte;
 
+use Phoundation\Core\Log\Log;
 use Phoundation\Core\Plugins\Plugins;
+use Phoundation\Core\Sessions\Session;
+use Phoundation\Core\Sessions\SessionConfig;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel;
 use Phoundation\Web\Html\Components\Widgets\Panels\HeaderPanel;
@@ -57,17 +60,20 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
         Response::getHtmlHeadersSent(true);
 
         if (Response::getRenderMainWrapper()) {
+            $body    = Request::getPanelsObject()->get('top', false)?->render() .
+                       Request::getPanelsObject()->get('left')?->render() .
+                       $body .
+                       Request::getPanelsObject()->get('bottom', false)?->render();
+
             $output .= ' <body class="sidebar-mini' . (Config::get('web.panels.sidebar.collapsed', false) ? ' sidebar-collapse' : '') . '" style="height: auto;">
                             <div class="wrapper">' .
-                                Response::getFlashMessages()->render() .
-                                Request::getPanelsObject()->get('top', false)?->render() .
-                                Request::getPanelsObject()->get('left')?->render() .
-                                $body .
-                                Request::getPanelsObject()->get('bottom', false)?->render() . '
+                                Response::getFlashMessagesObject()->render() .
+                                $body . '
                             </div>';
+
         } else {
             // Page requested that no body parts be built
-            $output .= $body;
+            $output .= Response::getFlashMessagesObject()->render() . $body;
         }
 
         $output .= $this->renderHtmlFooters();
