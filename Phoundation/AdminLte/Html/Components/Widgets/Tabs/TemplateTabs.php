@@ -20,7 +20,6 @@ use Phoundation\Exception\UnderConstructionException;
 use Phoundation\Web\Html\Components\Widgets\Tabs\Tabs;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
-
 class TemplateTabs extends TemplateRenderer
 {
     /**

@@ -17,7 +17,6 @@ namespace Templates\Phoundation\AdminLte\Html\Components\Input;
 
 use Phoundation\Web\Html\Components\Input\InputRadio;
 
-
 class TemplateInputRadio extends TemplateInput
 {
     /**

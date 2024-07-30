@@ -19,7 +19,6 @@ use Phoundation\Exception\OutOfBoundsException;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\Url;
 
-
 class Template extends TemplateRenderer
 {
     public function render(): ?string

@@ -18,7 +18,6 @@ namespace Templates\Phoundation\Mdb\Html\Components\Widgets\Modals;
 use Phoundation\Web\Html\Components\Widgets\Modals\Modal;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
-
 class TemplateModal extends TemplateRenderer
 {
     /**

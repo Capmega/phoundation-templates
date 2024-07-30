@@ -18,7 +18,6 @@ namespace Templates\Phoundation\Mdb\Html\Components\Input\Buttons;
 use Phoundation\Web\Html\Components\Input\Buttons\InputButtons;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
-
 class TemplateInputButtons extends TemplateRenderer
 {
     /**

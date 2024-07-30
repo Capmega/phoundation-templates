@@ -20,7 +20,6 @@ use Phoundation\Web\Html\Components\Input\InputHidden;
 use Phoundation\Web\Html\Components\Input\InputSelect;
 use Templates\Phoundation\Mdb\Html\Traits\TraitTemplateRenderBeforeAfterButtons;
 
-
 class TemplateInputSelect extends TemplateInput
 {
     use TraitTemplateRenderBeforeAfterButtons;

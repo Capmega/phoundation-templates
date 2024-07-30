@@ -20,7 +20,6 @@ use Phoundation\Web\Html\Components\Input\Interfaces\InputInterface;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Templates\Phoundation\Mdb\Html\Traits\TraitTemplateRenderBeforeAfterButtons;
 
-
 class TemplateInput extends TemplateRenderer
 {
     use TraitTemplateRenderBeforeAfterButtons;

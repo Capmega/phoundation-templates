@@ -18,7 +18,6 @@ namespace Templates\Phoundation\Mdb\Html\Components;
 use Phoundation\Web\Html\Components\Label;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
-
 class TemplateLabel extends TemplateRenderer
 {
     /**
