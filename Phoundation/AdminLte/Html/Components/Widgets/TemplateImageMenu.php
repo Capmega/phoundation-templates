@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
 
 declare(strict_types=1);
 
@@ -19,6 +20,7 @@ use Phoundation\Exception\OutOfBoundsException;
 use Phoundation\Web\Html\Components\Widgets\ImageMenu;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
+
 
 class TemplateImageMenu extends TemplateRenderer
 {
@@ -49,7 +51,7 @@ class TemplateImageMenu extends TemplateRenderer
                               id="navbarDropdownMenuAvatar" aria-expanded="false"
                               ' . ($this->component->getMenu() ? 'role="button" data-mdb-toggle="dropdown"' : ($this->component->getModalSelector() ? 'data-mdb-toggle="modal" data-mdb-target="' . Html::safe($this->component->getModalSelector()) . '"' : null)) . '>';
 
-        $this->render .= $this->component->getImage()->getHtmlElement()
+        $this->render .= $this->component->getImage()->getImgObject()
             ->setHeight($this->component->getHeight())
             ->addClasses('rounded-circle')
             ->setExtra('loading="lazy"')

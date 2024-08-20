@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
 
 declare(strict_types=1);
 
@@ -21,6 +22,7 @@ use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\NotificationsDropDown;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
+
 
 class TemplateNotificationsDropDown extends TemplateRenderer
 {
@@ -96,7 +98,7 @@ class TemplateNotificationsDropDown extends TemplateRenderer
 
 //                $this->render .= '<a href="" class="dropdown-item notification open-modal" data-id="' . $notification->getId() . '">
 //                                    ' . ($notification->getIcon()?->render() . Html::safe(Strings::truncate($notification->getTitle(), 24)) . '
-//                                    <span class="float-right text-muted text-sm"> ' . Html::safe(Date::getAge($notification->getCreatedOnObject())) . '</span>
+//                                    <span class="float-right text-muted text-sm"> ' . Html::safe(Date::getAge($notification->getCreatedOnDateTimeObject())) . '</span>
 //                                  </a>';
             }
 

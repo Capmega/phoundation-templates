@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
 
 declare(strict_types=1);
 
@@ -33,7 +34,7 @@ interface TemplateDataEntryFormRowsInterface
      * Sets the maximum number of columns per row
      *
      * @param int $count
-     * @return $this
+     * @return static
      */
     public function setColumnCount(int $count): static;
 
@@ -42,7 +43,7 @@ interface TemplateDataEntryFormRowsInterface
      *
      * @param DefinitionInterface|null    $definition
      * @param RenderInterface|string|null $component
-     * @return $this
+     * @return static
      */
     public function add(?DefinitionInterface $definition = null, RenderInterface|string|null $component = null): static;
 
@@ -50,7 +51,7 @@ interface TemplateDataEntryFormRowsInterface
      * Adds the specified DataEntryFormColumn to this DataEntryFormRow
      *
      * @param DataEntryFormColumn $column
-     * @return $this
+     * @return static
      */
     public function addColumn(DataEntryFormColumn $column): static;
 

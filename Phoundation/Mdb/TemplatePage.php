@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
 
 declare(strict_types=1);
 
@@ -27,6 +28,7 @@ use Phoundation\Web\Html\Components\Widgets\Panels\TopPanel;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Requests\Request;
 use Phoundation\Web\Requests\Response;
+
 
 class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 {

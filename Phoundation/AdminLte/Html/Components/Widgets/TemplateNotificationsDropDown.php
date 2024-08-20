@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
 
 declare(strict_types=1);
 
@@ -22,6 +23,7 @@ use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\NotificationsDropDown;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
+
 
 class TemplateNotificationsDropDown extends TemplateRenderer
 {
@@ -86,7 +88,7 @@ class TemplateNotificationsDropDown extends TemplateRenderer
 
                 $this->render .= '<a href="' . Html::safe(str_replace(':ID', (string) $notification->getId(), (string) $this->component->getNotificationsUrl())) . '" class="dropdown-item notification open-modal" data-id="' . $notification->getId() . '">
                                     ' . ($notification->getIcon() ? '<i class="text-' . Html::safe($notification->getMode()->value) . ' fas fa-' . Html::safe($notification->getIcon()) . ' mr-2"></i> ' : null) . Html::safe(Strings::truncate($notification->getTitle(), 24)) . '
-                                    <span class="float-right text-muted text-sm"> ' . Html::safe(Date::getAge($notification->getCreatedOnObject())) . '</span>
+                                    <span class="float-right text-muted text-sm"> ' . Html::safe(Date::getAge($notification->getCreatedOnDateTimeObject())) . '</span>
                                   </a>
                                   <div class="dropdown-divider"></div>';
             }

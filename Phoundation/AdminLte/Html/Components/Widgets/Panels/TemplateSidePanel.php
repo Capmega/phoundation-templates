@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
 
 declare(strict_types=1);
 
@@ -22,6 +23,7 @@ use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\Panels\SidePanel;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Phoundation\Web\Http\Url;
+
 
 class TemplateSidePanel extends TemplateRenderer
 {
@@ -48,15 +50,15 @@ class TemplateSidePanel extends TemplateRenderer
                             <div class="sidebar">
                               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                                 <div class="image">
-                                  ' . Session::getUser()->getPicture()
-                                        ->getHtmlElement()
+                                  ' . Session::getUserObject()->getImageFileObject()
+                                        ->getImgObject()
                                             ->setSrc(Url::getImg('img/profiles/default.png'))
                                             ->setClass('img-circle elevation-2')
-                                            ->setAlt(tr('Profile picture for :user', [':user' => Session::getUser()->getDisplayName()]))
+                                            ->setAlt(tr('Profile picture for :user', [':user' => Session::getUserObject()->getDisplayName()]))
                                             ->render() . '
                                 </div>
                                 <div class="info">
-                                  <a href="' . (Session::getUser()->isGuest() ? '#' : Url::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUser()->getDisplayName() . '</a>
+                                  <a href="' . (Session::getUserObject()->isGuest() ? '#' : Url::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUserObject()->getDisplayName() . '</a>
                                 </div>
                               </div>
                               <div class="form-inline">

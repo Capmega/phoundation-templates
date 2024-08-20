@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\Mdb
  */
+
 
 declare(strict_types=1);
 
@@ -25,6 +26,7 @@ use Phoundation\Web\Html\Enums\EnumElement;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 use Templates\Phoundation\Mdb\TemplatePage;
+
 
 class TemplateDataEntryFormColumn extends TemplateRenderer
 {
@@ -77,7 +79,7 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
 
         } else {
             if ($component instanceof InputSelectInterface) {
-                if ($definition->getElement() !== 'select') {
+                if ($definition->getElement() !== EnumElement::select) {
                     $definition->setElement(EnumElement::select);
 
                     Log::warning(tr('Encountered <select> component ":component" in data entry form ":data_entry" with element not set to EnumElement->select but to ":element" instead. This will cause rendering issues, forced $component->setElement(EnumElement->select)', [
@@ -105,7 +107,7 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
         }
 
         switch ($definition->getElement()) {
-            case 'select':
+            case EnumElement::select:
                 if ($group) {
                     $this->render .= '<div class="' . TemplatePage::getBottomMarginString() . Html::safe($definition->getSize() ? 'col-sm-' . $definition->getSize() : 'col') . ($definition->getVisible() ? '' : ' invisible') . ($definition->getDisplay() ? '' : ' d-none') . '">
                                           <div class="input-group">
@@ -123,11 +125,13 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
                                                  </label>' : '') . '
                                   </div>';
                 }
+
                 return parent::render();
 
-            case 'textarea':
+            case EnumElement::textarea:
                 // no break
-            case 'input':
+
+            case EnumElement::input:
                 $label    = null;
                 $mdb_init = ' data-mdb-input-init=""';
                 break;

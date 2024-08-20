@@ -5,11 +5,12 @@
  *
  *
  *
- * @author Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
+ * @author    Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @license http://opensource.org/licenses/GPL-2.0 GNU Public License, Version 2
  * @copyright Copyright (c) 2024 Sven Olaf Oostenbrink <so.oostenbrink@gmail.com>
  * @package Templates\AdminLte
  */
+
 
 declare(strict_types=1);
 
@@ -21,6 +22,7 @@ use Phoundation\Utils\Strings;
 use Phoundation\Web\Html\Components\Widgets\LanguagesDropDown;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
+
 
 class TemplateLanguagesDropDown extends TemplateRenderer
 {
@@ -65,7 +67,7 @@ class TemplateLanguagesDropDown extends TemplateRenderer
 
                 $this->render .= '<a href="' . Html::safe(str_replace(':ID', $language->getId(), $this->component->getLanguagesUrl())) . '" class="dropdown-item">
                                     ' . ($language->getIcon() ? '<i class="text-' . Html::safe($language->getMode()->value) . ' fas fa-' . Html::safe($language->getIcon()) . ' mr-2"></i> ' : null) . Strings::truncate($language->getTitle(), 24) . '
-                                    <span class="float-right text-muted text-sm"> ' . Html::safe(Date::getAge($language->getCreatedOnObject())) . '</span>
+                                    <span class="float-right text-muted text-sm"> ' . Html::safe(Date::getAge($language->getCreatedOnDateTimeObject())) . '</span>
                                   </a>
                                   <div class="dropdown-divider"></div>';
             }
