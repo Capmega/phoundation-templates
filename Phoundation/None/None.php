@@ -60,6 +60,6 @@ class None extends Template
      */
     public function getDirectory(): FsDirectoryInterface
     {
-        return new FsDirectory(__DIR__ . '/', FsRestrictions::getReadonly(DIRECTORY_ROOT, 'Templates\Phoundation\None::getDirectory()'));
+        return new FsDirectory(__DIR__ . '/', FsRestrictions::getReadonly(DIRECTORY_ROOT));
     }
 }
