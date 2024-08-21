@@ -19,6 +19,7 @@ namespace Templates\Phoundation\AdminLte\Html\Components\Widgets\Boxes;
 use Phoundation\Web\Html\Components\Widgets\Boxes\Box;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
+
 abstract class TemplateBox extends TemplateRenderer
 {
     /**

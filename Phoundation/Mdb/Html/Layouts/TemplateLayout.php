@@ -19,6 +19,7 @@ namespace Templates\Phoundation\Mdb\Html\Layouts;
 use Phoundation\Web\Html\Layouts\Layout;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
+
 abstract class TemplateLayout extends TemplateRenderer
 {
     /**

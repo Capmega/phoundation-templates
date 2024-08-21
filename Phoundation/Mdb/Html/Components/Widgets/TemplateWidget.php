@@ -19,6 +19,7 @@ namespace Templates\Phoundation\Mdb\Html\Components\Widgets;
 use Phoundation\Web\Html\Components\Widgets\Widget;
 use Phoundation\Web\Html\Template\TemplateRenderer;
 
+
 abstract class TemplateWidget extends TemplateRenderer
 {
     /**
