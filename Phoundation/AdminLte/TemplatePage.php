@@ -16,10 +16,7 @@ declare(strict_types=1);
 
 namespace Templates\Phoundation\AdminLte;
 
-use Phoundation\Core\Log\Log;
 use Phoundation\Core\Plugins\Plugins;
-use Phoundation\Core\Sessions\Session;
-use Phoundation\Core\Sessions\SessionConfig;
 use Phoundation\Utils\Config;
 use Phoundation\Web\Html\Components\Widgets\Panels\BottomPanel;
 use Phoundation\Web\Html\Components\Widgets\Panels\HeaderPanel;
@@ -148,7 +145,8 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
             'Phoundation/adminlte/plugins/jquery-ui/jquery-ui',
             'Phoundation/adminlte/plugins/bootstrap/js/bootstrap.bundle',
             'Phoundation/adminlte/plugins/overlayScrollbars/js/jquery.overlayScrollbars',
-            'Phoundation/adminlte/js/adminlte'
+            'Phoundation/adminlte/js/adminlte',
+            'Phoundation/phoundation/js/jquery-phoundation',
         ], prefix: true);
 
         // Set basic page details

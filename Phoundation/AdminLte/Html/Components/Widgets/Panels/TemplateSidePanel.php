@@ -53,6 +53,7 @@ class TemplateSidePanel extends TemplateRenderer
                                   ' . Session::getUserObject()->getImageFileObject()
                                         ->getImgObject()
                                             ->setSrc(Url::getImg('img/profiles/default.png'))
+                                            ->setId('menu-profile-image')
                                             ->setClass('img-circle elevation-2')
                                             ->setAlt(tr('Profile picture for :user', [':user' => Session::getUserObject()->getDisplayName()]))
                                             ->render() . '

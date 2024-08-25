@@ -131,7 +131,11 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
         Response::loadCss(Config::getArray('templates.mdb.css', []));
 
         // Load basic MDB amd jQuery javascript libraries
-        Response::loadJavascript('Phoundation/mdb/js/jquery,Phoundation/mdb/js/mdb.umd', prefix: true);
+        Response::loadJavascript([
+            'Phoundation/mdb/js/jquery',
+            'Phoundation/mdb/js/mdb.umd',
+            'Phoundation/phoundation/js/jquery-phoundation'
+        ], prefix: true);
 
         // Set basic page details
         Response::setPageTitle(tr('Phoundation platform'));
