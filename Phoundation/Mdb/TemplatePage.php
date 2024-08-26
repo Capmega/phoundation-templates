@@ -30,7 +30,7 @@ use Phoundation\Web\Requests\Request;
 use Phoundation\Web\Requests\Response;
 
 
-class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
+class TemplatePage extends \Phoundation\Web\Requests\TemplatePage
 {
     /**
      * Execute, builds and returns the page output, according to the template.
@@ -122,9 +122,9 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
         Response::loadCss([
             'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
             'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap',
-            'Phoundation/mdb/css/mdb',
-            'Phoundation/mdb/css/mdb-fix',
-            'Phoundation/mdb/css/phoundation',
+            'phoundation/mdb/css/mdb',
+            'phoundation/mdb/css/mdb-fix',
+            'phoundation/mdb/css/phoundation',
         ], true);
 
         // Load configured CSS files
@@ -132,9 +132,9 @@ class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
 
         // Load basic MDB amd jQuery javascript libraries
         Response::loadJavascript([
-            'Phoundation/mdb/js/jquery',
-            'Phoundation/mdb/js/mdb.umd',
-            'Phoundation/phoundation/js/jquery-phoundation'
+            'phoundation/mdb/js/jquery',
+            'phoundation/mdb/js/mdb.umd',
+            'phoundation/phoundation/js/jquery-phoundation'
         ], prefix: true);
 
         // Set basic page details

@@ -19,7 +19,7 @@ namespace Templates\None;
 use Phoundation\Web\Requests\Response;
 
 
-class TemplatePage extends \Phoundation\Web\Html\Template\TemplatePage
+class TemplatePage extends \Phoundation\Web\Requests\TemplatePage
 {
     /**
      * Execute, builds and returns the page output according to the template.

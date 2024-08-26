@@ -16,7 +16,7 @@ declare(strict_types=1);
 
 namespace Templates\Phoundation\Mdb\Exception;
 
-use Templates\Exception\TemplatesException;
+use Phoundation\Templates\Exception\TemplatesException;
 
 
 class MdbException extends TemplatesException

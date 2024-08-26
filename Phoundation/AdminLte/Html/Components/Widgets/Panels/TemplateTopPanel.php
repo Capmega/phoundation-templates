@@ -40,7 +40,7 @@ class TemplateTopPanel extends TemplateRenderer
         // If impersonated, change top panel color and add an impersonation message
         if (Session::isImpersonated()) {
             $this->component->setMode(EnumDisplayMode::danger);
-            $message = tr('(Impersonated by ":user")', [':user' => Session::getRealUser()->getDisplayName()]);
+            $message = tr('(Impersonated by ":user")', [':user' => Session::getRealUserObject()->getDisplayName()]);
 
         } else {
             $this->component->setMode(EnumDisplayMode::white);

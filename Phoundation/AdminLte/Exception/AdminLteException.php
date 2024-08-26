@@ -16,7 +16,7 @@ declare(strict_types=1);
 
 namespace Templates\Phoundation\AdminLte\Exception;
 
-use Templates\Exception\TemplatesException;
+use Phoundation\Templates\Exception\TemplatesException;
 
 
 class AdminLteException extends TemplatesException
