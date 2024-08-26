@@ -50,13 +50,13 @@ class TemplateSidePanel extends TemplateRenderer
                             <div class="sidebar">
                               <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                                 <div class="image">
-                                  ' . Session::getUserObject()->getImageFileObject()
-                                        ->getImgObject()
-                                            ->setSrc(Url::getImg('img/profiles/default.png'))
-                                            ->setId('menu-profile-image')
-                                            ->setClass('img-circle elevation-2')
-                                            ->setAlt(tr('Profile picture for :user', [':user' => Session::getUserObject()->getDisplayName()]))
-                                            ->render() . '
+                                  ' . Session::getUserObject()
+                                             ->getProfileImageObject()
+                                                 ->getHtmlImgObject()
+                                                     ->setId('menu-profile-image')
+                                                     ->setClass('img-circle elevation-2')
+                                                     ->setAlt(tr('Profile picture for :user', [':user' => Session::getUserObject()->getDisplayName()]))
+                                                     ->render() . '
                                 </div>
                                 <div class="info">
                                   <a href="' . (Session::getUserObject()->isGuest() ? '#' : Url::getWww('/my/profile.html')) . '" class="d-block">' . Session::getUserObject()->getDisplayName() . '</a>
