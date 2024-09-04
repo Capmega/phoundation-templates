@@ -60,6 +60,6 @@ class None extends Template
      */
     public function getDirectory(): FsDirectoryInterface
     {
-        return new FsDirectory(__DIR__ . '/', FsRestrictions::getReadonly(DIRECTORY_ROOT));
+        return new FsDirectory(__DIR__ . '/', FsRestrictions::newReadonly(DIRECTORY_ROOT));
     }
 }
