@@ -1,4 +1,61 @@
+/**
+ * This is the translation tr() marker call
+ *
+ * @param text
+ * @returns {*}
+ */
+function tr(text) {
+    return text;
+}
+
+
 (($) => {
+    /**
+     * String::until() return this string starting from the first occurrence of the specified needle
+     *
+     *
+     * @param needle
+     * @param needle_required
+     * @returns {String|string}
+     */
+    String.prototype.from = function(needle, needle_required = false) {
+        let pos = this.indexOf(needle);
+
+        if (pos === -1) {
+            if (needle_required) {
+                return '';
+            }
+
+            return this.toString();
+        }
+
+        return this.substring(pos + 1);
+    }
+
+
+    /**
+     * String::until() return this string until the first occurrence of the specified needle
+     *
+     *
+     * @param needle
+     * @param needle_required
+     * @returns {String|string}
+     */
+    String.prototype.until = function(needle, needle_required = false) {
+        let pos = this.indexOf(needle);
+
+        if (pos === -1) {
+            if (needle_required) {
+                return '';
+            }
+
+            return this.toString();
+        }
+
+        return this.substring(0, pos);
+    }
+
+
     /**
      * Create the Phoundation main class
      */
@@ -14,7 +71,7 @@
      *
      * @param html
      */
-    Phoundation.processHtml = function (html): void
+    Phoundation.processHtml = function (html)
     {
         // Process HTML modifications
         if (typeof html != "object") {
@@ -23,7 +80,8 @@
         }
 
         // Process each section
-        html.forEach(function(section, id): void {
+        html.forEach(function(section, id)
+        {
             switch (section.method) {
                 case "replace":
                     // Replace the selector with the new HTML
@@ -52,7 +110,7 @@
      *
      * @param messages
      */
-    Phoundation.processFlash = function (messages): void
+    Phoundation.processFlash = function (messages)
     {
         // Process HTML modifications
         if (typeof messages != "object") {
@@ -60,7 +118,7 @@
             throw "Received invalid Phoundation response json.messages, should be object";
         }
 
-        messages.forEach(function(section, id): void {
+        messages.forEach(function(section, id) {
             $(document).Toasts("create", section);
         });
     }
@@ -81,14 +139,31 @@
     /**
      * Add $.filterPhoundation() method to jQuery
      */
-    $.filterPhoundation = function (response): string {
-        let json;
+    $.filterPhoundation = function (response, type)
+    {
+        let json, jsonp, clean;
 
         try {
             json = JSON.parse(response);
 
         } catch (e) {
-            return response;
+            // Is it a JSONP response with a callback, perhaps?
+            if (!response.match(/^jQuery[0-9]+_[0-9]+\(\{.+?}\)$/)) {
+                console.log("Failed to pre-process AJAX request with: " + e);
+                return response;
+            }
+
+            jsonp = response.until("(");
+            clean = response.from("(");
+            clean = clean.substr(0, clean.length - 1);
+
+            try {
+                // Retry to parse the (now clean) JSON
+                json = JSON.parse(clean);
+
+            } catch (e) {
+                console.log("Failed to pre-process JSONP AJAX request with: " + e);
+            }
         }
 
         // We got JSON, yay! Is it Phundation JSON tho?
@@ -107,15 +182,15 @@
                 break;
 
             case 'redirect':
-                window.location.href(json.location);
+                window.location.href(json.data.location);
                 break;
 
             case 'signin':
-                window.location.replace(json.location);
+                window.location.replace(json.data.location);
                 break;
 
             case 'reload':
-                window.location.reload(json.clearCache);
+                window.location.reload(json.data.clearCache);
                 break;
 
             case 'error':
@@ -125,18 +200,27 @@
         // Process flash and HTML sections
         if (json.flash) {
             Phoundation.processFlash(json.flash);
+            delete json.flash;
         }
 
         if (json.html) {
             Phoundation.processHtml(json.html);
+            delete json.html;
         }
 
         // Ensure we have data in the response
-        if (json.data == undefined) {
+        if (typeof json.data == "undefined") {
             json.data = {};
         }
 
-        return JSON.stringify(json.data);
+        response = JSON.stringify(json.data);
+
+        if (jsonp) {
+            // Rebuild the JSONP request
+            response = jsonp + "(" + response + ")";
+        }
+
+        return response;
     }
 
 
@@ -147,7 +231,8 @@
      * @param options
      * @returns {*}
      */
-    $.ajax = function (url, options) {
+    $.ajax = function (url, options)
+    {
         // Execute the ajax call
         const ajaxResult = old_ajax(url, options);
 
@@ -190,14 +275,17 @@
 /**
  * Ensure that jQuery pre-processes all Phoundation responses using $.filterPhoundation()
  */
-$(function() {
+$(function()
+{
     $.ajaxSetup({
-        dataFilter: function (response) {
-            $.filterPhoundation(response);
+        dataFilter: function (response, type) {
+            return $.filterPhoundation(response, type);
         },
         dataType: "json",
         cache: false
     });
 
+    console.clear();
     console.log("Phoundation jQuery extension initialized");
 });
+
