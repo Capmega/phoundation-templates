@@ -78,7 +78,7 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
         }
 
         $this->render .= match ($definition->getInputType()?->value) {
-            'checkbox' => '    <div class="col-sm-' . Html::safe($definition->getSize() ?? 12) . '">
+            'checkbox' => '    <div class="' . Html::safe($definition->getSize() ? 'col-sm-' . $definition->getSize() : 'col') . ($definition->getVisible() ? '' : ' invisible') . ($definition->getDisplay() ? '' : ' d-none') . (isset($class) ? ' ' . $class : '') . '"' . (isset($attributes) ? ' ' . $attributes : '') . '>
                                    <div class="form-group'  . ($group ? 'input-group ' : null) . (isset($class) ? ' ' . $class : '') . '"' . (isset($attributes) ? ' ' . $attributes : '') . '>
                                        <div class="form-horizontal">
                                            <label for="' . Html::safe($definition->getColumn()) . '">' . Html::safe($definition->getLabel()) . '</label>
@@ -91,7 +91,7 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
                                    </div>
                                </div>',
 
-            default    => '    <div class="col-sm-' . Html::safe($definition->getSize() ?? 12) . '">
+            default    => '    <div class="' . Html::safe($definition->getSize() ? 'col-sm-' . $definition->getSize() : 'col') . ($definition->getVisible() ? '' : ' invisible') . ($definition->getDisplay() ? '' : ' d-none') . (isset($class) ? ' ' . $class : '') . '"' . (isset($attributes) ? ' ' . $attributes : '') . '>
                                    <div class="form-group'  . ($group ? 'input-group ' : null) . (isset($class) ? ' ' . $class : '') . '"' . (isset($attributes) ? ' ' . $attributes : '') . '>
                                        <div class="form-horizontal">
                                            <label for="' . Html::safe($definition->getColumn()) . '">' . Html::safe($definition->getLabel()) . '</label>

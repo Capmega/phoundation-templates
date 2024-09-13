@@ -40,6 +40,6 @@ class TemplateHtmlDataTable extends TemplateRenderer
      */
     public function render(): ?string
     {
-        return GridRow::new()->addColumn(parent::render())->render();
+        return GridRow::new()->addGridColumn(parent::render())->render();
     }
 }
