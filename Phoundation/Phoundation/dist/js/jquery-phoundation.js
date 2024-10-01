@@ -83,6 +83,11 @@ function tr(text) {
         html.forEach(function(section, id)
         {
             switch (section.method) {
+                case "delete":
+                    // Replace the selector with the new HTML
+                    $(section.selector).delete();
+                    break;
+
                 case "replace":
                     // Replace the selector with the new HTML
                     $(section.selector).replaceWith(section.html);
@@ -119,7 +124,7 @@ function tr(text) {
         }
 
         messages.forEach(function(section, id) {
-            $(document).Toasts("create", section);
+            $(document).Toasts("create", JSON.parse(section));
         });
     }
 
@@ -285,7 +290,19 @@ $(function()
         cache: false
     });
 
-    console.clear();
+//    console.clear();
     console.log("Phoundation jQuery extension initialized");
+    console.log(" ");
+    console.warn("YOU ARE NOT SUPPOSED TO BE HERE!");
+    console.warn(" ");
+    console.warn("THIS PART IN YOUR BROWSER IS DANGEROUS AND UNLESS YOU ARE PART OF IT PERSONNEL YOU SHOULD NEVER GO HERE");
+    console.warn(" ");
+    console.warn(" SSSSS    TTTTTTTT    OOOOO    PPPPPP    !!");
+    console.warn("SS           TT      OO   OO   PP   PP   !!");
+    console.warn(" SSSSS       TT      OO   OO   PPPPPP    !!");
+    console.warn("     SS      TT      OO   OO   PP          ");
+    console.warn(" SSSSS       TT       OOOOO    PP        !!");
+    console.warn(" ");
+    console.warn("IF SOMEBODY TOLD YOU TO GO AND DO SOMETHING IN THIS AREA, THEN YOU ARE BEING SCAMMED! PLEASE STOP TALKING TO THIS PERSON AND REPORT THIS INCIDENT TO YOUR IT DEPARTMENT DIRECTLY!");
 });
 
