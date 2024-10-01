@@ -265,7 +265,7 @@ class TemplateTopPanel extends TemplateRenderer
                 case 'search':
                     $delete[] = $element_id;
 
-                    $contents .= '<form class="d-flex input-group w-auto">
+                    $contents .= '<form class="d-flex input-group w-auto" method="get">
                                     ' . Csrf::getHiddenElement() . '
                                     <input type="search" class="form-control rounded" placeholder="' . tr('Search') . '" aria-label="' . tr('Search') . '" aria-describedby="search-addon" />
                                       <span class="input-group-text border-0" id="search-addon">

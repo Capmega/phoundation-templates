@@ -72,7 +72,7 @@ class TemplateNotificationsDropDown extends TemplateRenderer
 
         $this->render = '   <a class="nav-link" data-toggle="dropdown" href="#">
                               <i class="far fa-bell"></i>
-                              ' . ($count ? '<span class="badge badge-' . Html::safe($mode) . ' navbar-badge">' . Html::safe($count) . '</span>' : null) . '                              
+                              ' . ($count ? '<span class="badge badge-' . Html::safe($mode) . ' navbar-badge">' . Html::safe($count > 99 ? '99+' : $count) . '</span>' : null) . '                              
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                                   <span class="dropdown-item dropdown-header">' . tr(':count Notifications', [':count' => ($count > 99 ? '99+' : $count)]) . '</span>
