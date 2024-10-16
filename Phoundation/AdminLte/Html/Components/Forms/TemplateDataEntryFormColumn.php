@@ -19,6 +19,7 @@ namespace Templates\Phoundation\AdminLte\Html\Components\Forms;
 use Phoundation\Data\DataEntry\Definitions\Interfaces\DefinitionInterface;
 use Phoundation\Exception\OutOfBoundsException;
 use Phoundation\Web\Html\Components\Forms\Interfaces\DataEntryFormColumnInterface;
+use Phoundation\Web\Html\Components\Input\Interfaces\BeforeAfterButtonsInterface;
 use Phoundation\Web\Html\Components\Widgets\Tooltips\Tooltip;
 use Phoundation\Web\Html\Html;
 use Phoundation\Web\Html\Template\TemplateRenderer;
@@ -54,8 +55,8 @@ class TemplateDataEntryFormColumn extends TemplateRenderer
             $group  = false;
 
         } else {
-            $render = $component->render();
-            $group  = ($component->hasBeforeButtons() or $component->hasAfterButtons());
+            $render =  $component->render();
+            $group  = (($component instanceof BeforeAfterButtonsInterface) and ($component->hasBeforeButtons() or $component->hasAfterButtons()));
 
             if ($component->hasOuterDiv()) {
                 // Get attributes and properties for the outer div

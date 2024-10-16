@@ -52,7 +52,7 @@ class TemplateModal extends TemplateRenderer
 //            );
 //
 //        // Set defaults
-//        $object->setContent($layout->render());
+//        $object->setContent($layout);
 
         // Render the modal.
         return '<div class="modal fade" id="' . $object->getId() . '" style="display: none;" aria-hidden="true">

@@ -49,8 +49,9 @@ class TemplateGrid extends TemplateRenderer
                 $render .= $row->render();
             }
 
-            $this->render .= $this->component->getForm()->setContent($render)->render();
+            $this->render .= $this->component->getForm()->setContent($render);
             $this->component->setForm(null);
+
         } else {
             foreach ($this->component->getSource() as $row) {
                 $this->render .= $row->render();

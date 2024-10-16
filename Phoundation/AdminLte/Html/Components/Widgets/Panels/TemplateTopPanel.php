@@ -89,8 +89,7 @@ class TemplateTopPanel extends TemplateRenderer
                                           <i class="fas fa-search"></i>
                                         </a>
                                         <div class="navbar-search-block">
-                                          <form class="form-inline">
-                                            ' . Csrf::getHiddenElement() . '
+                                          <form class="form-inline" method="get">
                                             <div class="input-group input-group-sm">
                                               <input class="form-control form-control-navbar" type="search" placeholder="' . tr('Search everywhere') . '" aria-label="' . tr('Search everywhere') . '">
                                               <div class="input-group-append">

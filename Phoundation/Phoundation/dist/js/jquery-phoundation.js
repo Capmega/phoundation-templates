@@ -124,7 +124,7 @@ function tr(text) {
         }
 
         messages.forEach(function(section, id) {
-            $(document).Toasts("create", JSON.parse(section));
+            $(document).Toasts("create", section);
         });
     }
 
@@ -153,7 +153,7 @@ function tr(text) {
 
         } catch (e) {
             // Is it a JSONP response with a callback, perhaps?
-            if (!response.match(/^jQuery[0-9]+_[0-9]+\(\{.+?}\)$/)) {
+            if (!response.match(/^jQuery[0-9]+_[0-9]+\(\{.+?\}\)$/s)) {
                 console.log("Failed to pre-process AJAX request with: " + e);
                 return response;
             }
@@ -205,12 +205,10 @@ function tr(text) {
         // Process flash and HTML sections
         if (json.flash) {
             Phoundation.processFlash(json.flash);
-            delete json.flash;
         }
 
         if (json.html) {
             Phoundation.processHtml(json.html);
-            delete json.html;
         }
 
         // Ensure we have data in the response
@@ -293,16 +291,16 @@ $(function()
     console.clear();
     console.log("Phoundation jQuery extension initialized");
     console.log(" ");
-    console.warn(" SSSSS    TTTTTTTT    OOOOO    PPPPPP    !!");
-    console.warn("SS           TT      OO   OO   PP   PP   !!");
-    console.warn(" SSSSS       TT      OO   OO   PPPPPP    !!");
-    console.warn("     SS      TT      OO   OO   PP         ");
-    console.warn(" SSSSS       TT       OOOOO    PP        !!");
-    console.warn(" ");
     console.warn("YOU ARE NOT SUPPOSED TO BE HERE!");
     console.warn(" ");
     console.warn("THIS PART IN YOUR BROWSER IS DANGEROUS AND UNLESS YOU ARE PART OF IT PERSONNEL YOU SHOULD NEVER GO HERE");
     console.warn(" ");
-    console.warn("IF SOMEBODY TOLD YOU DO SOMETHING IN THIS AREA, PLEASE REPORT THIS PERSON TO YOUR IT DEPARTMENT");
+    console.warn(" SSSSS    TTTTTTTT    OOOOO    PPPPPP    !!");
+    console.warn("SS           TT      OO   OO   PP   PP   !!");
+    console.warn(" SSSSS       TT      OO   OO   PPPPPP    !!");
+    console.warn("     SS      TT      OO   OO   PP          ");
+    console.warn(" SSSSS       TT       OOOOO    PP        !!");
+    console.warn(" ");
+    console.warn("IF SOMEBODY TOLD YOU TO GO AND DO SOMETHING IN THIS AREA, THEN YOU ARE BEING SCAMMED! PLEASE STOP TALKING TO THIS PERSON AND REPORT THIS INCIDENT TO YOUR IT DEPARTMENT DIRECTLY!");
 });
 
