@@ -34,7 +34,7 @@ class TemplateSignInPage extends TemplateRenderer
         Response::setPageTitle(tr('Please sign in'));
         Response::setHeaderTitle(tr('Please sign in'));
 
-        $this->render = '   <body class="hold-transition login-page" style="background: url(' . Url::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/signin.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover;">
+        $this->render = '   <body class="hold-transition login-page" style="background: url(' . Url::getImg('img/backgrounds/' . Core::getProjectSeoName() . '/signin.jpg') . '); background-position: center; background-repeat: no-repeat; background-size: cover; !important;">
                                 <div class="login-box">
                                   <!-- /.login-logo -->
                                   <div class="card card-outline card-info">
